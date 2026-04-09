@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SolidPrinciples.Common/SolidPrinciples.Common.csproj" />
+    <Project Path="src/SolidPrinciples.SRP/SolidPrinciples.SRP.csproj" />
+    <Project Path="src/SolidPrinciples.OCP/SolidPrinciples.OCP.csproj" />
+    <Project Path="src/SolidPrinciples.LSP/SolidPrinciples.LSP.csproj" />
+    <Project Path="src/SolidPrinciples.ISP/SolidPrinciples.ISP.csproj" />
+    <Project Path="src/SolidPrinciples.DIP/SolidPrinciples.DIP.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SolidPrinciples.SRP.Tests/SolidPrinciples.SRP.Tests.csproj" />
+    <Project Path="tests/SolidPrinciples.OCP.Tests/SolidPrinciples.OCP.Tests.csproj" />
+    <Project Path="tests/SolidPrinciples.LSP.Tests/SolidPrinciples.LSP.Tests.csproj" />
+    <Project Path="tests/SolidPrinciples.ISP.Tests/SolidPrinciples.ISP.Tests.csproj" />
+    <Project Path="tests/SolidPrinciples.DIP.Tests/SolidPrinciples.DIP.Tests.csproj" />
+  </Folder>
+</Solution>
