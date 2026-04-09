@@ -31,11 +31,11 @@ Después de estudiar este módulo, deberías poder:
 
 LSP se formaliza a través de tres reglas:
 
-| Rule                                     | Meaning                                              | Violation Example                                                  |
-| ---------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------ |
-| **Preconditions cannot be strengthened** | Subtype cannot require more than base type           | Base: any member can register; Subtype: only verified members      |
-| **Postconditions cannot be weakened**    | Subtype must guarantee at least what base guarantees | Base: cancel always succeeds; Subtype: cancel fails with attendees |
-| **Invariants must be preserved**         | Subtype must maintain all constraints of base type   | Base: capacity > 0; Subtype: allows capacity = 0                   |
+| Regla                                         | Significado                                                    | Ejemplo de Violación                                                       |
+| --------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Las precondiciones no pueden fortalecerse** | El subtipo no puede requerir más que el tipo base              | Base: cualquier miembro puede registrarse; Subtipo: solo verificados       |
+| **Las postcondiciones no pueden debilitarse** | El subtipo debe garantizar al menos lo que la base garantiza   | Base: cancelar siempre tiene éxito; Subtipo: cancelar falla con asistentes |
+| **Los invariantes deben preservarse**         | El subtipo debe mantener todas las restricciones del tipo base | Base: capacidad > 0; Subtipo: permite capacidad = 0                        |
 
 ## 📁 Casos de Uso Incluidos
 
@@ -99,31 +99,31 @@ Demuestra precondiciones fortalecidas y postcondiciones debilitadas en subtipos.
 
 **Ver detalles**: [Problem/SessionHierarchy/README.md](Problem/SessionHierarchy/README.md) • [Solution/SessionHierarchy/README.md](Solution/SessionHierarchy/README.md)
 
-## Article Reference
+## Referencia de artículo
 
-📖 [Liskov Substitution Principle](https://calm-field-0d87ced10.6.azurestaticapps.net/post/en/solid-principles/liskov-substitution)
+📖 [Principio de Sustitución de Liskov](https://calm-field-0d87ced10.6.azurestaticapps.net/post/es/solid-principles/liskov-substitution)
 
-## How to Run Tests
+## Cómo ejecutar las pruebas
 
 ```bash
 dotnet test --filter "FullyQualifiedName~LSP"
 ```
 
-## Quick LSP Checklist
+## Lista de verificación rápida de LSP
 
-**Your code follows LSP if:**
+**Tu código sigue LSP si:**
 
-- Subtypes can be used anywhere the base type is expected
-- No type-checking (`is`, `as`) needed before calling methods
-- No `NotImplementedException` in inherited methods
-- Derived classes honor the same contracts as the base class
-- Polymorphic code works correctly with all subtypes
+- Los subtipos pueden usarse en cualquier lugar donde se espera el tipo base
+- No se necesita verificación de tipo (`is`, `as`) antes de llamar a métodos
+- No hay `NotImplementedException` en métodos heredados
+- Las clases derivadas honran los mismos contratos que la clase base
+- El código polimórfico funciona correctamente con todos los subtipos
 
-**Your code violates LSP if:**
+**Tu código viola LSP si:**
 
-- You check types before calling methods: `if (x is GuestMember)`
-- Derived classes throw exceptions for inherited methods
-- Operations silently do nothing in some subtypes
-- Subtypes require more (strengthened preconditions) than base type
-- Subtypes guarantee less (weakened postconditions) than base type
-- Comments say "don't use this method in SubTypeX"
+- Verificas tipos antes de llamar a métodos: `if (x is GuestMember)`
+- Las clases derivadas lanzan excepciones para métodos heredados
+- Las operaciones silenciosamente no hacen nada en algunos subtipos
+- Los subtipos requieren más (precondiciones fortalecidas) que el tipo base
+- Los subtipos garantizan menos (postcondiciones debilitadas) que el tipo base
+- Los comentarios dicen "no uses este método en SubTypeX"
